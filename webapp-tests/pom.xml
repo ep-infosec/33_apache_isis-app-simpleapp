@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>simpleapp-jpa</artifactId>
+        <groupId>org.apache.isis.starters</groupId>
+        <version>2.0.0-M9</version>
+    </parent>
+
+    <artifactId>simpleapp-jpa-webapp-tests</artifactId>
+    <name>SimpleApp (JPA) - Webapp (tests)</name>
+
+    <description>
+        Integ tests for entire app.
+    </description>
+
+    <packaging>jar</packaging>
+
+    <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+            <testResource>
+                <filtering>false</filtering>
+                <directory>src/test/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>simpleapp-jpa-webapp</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- TESTING -->
+
+        <dependency>
+            <groupId>org.apache.isis.testing</groupId>
+            <artifactId>isis-testing-integtestsupport-applib</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.isis.testing</groupId>
+            <artifactId>isis-testing-fakedata-applib</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.isis.testing</groupId>
+            <artifactId>isis-testing-fixtures-applib</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
